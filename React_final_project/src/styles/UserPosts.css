@@ -1,0 +1,210 @@
+:root {
+    --primary-color: #4cc9f0;
+    --primary-hover: #3a86ff;
+    --danger-color: #ff4d4f;
+    --danger-hover: #ff7875;
+    --success-color: #52c41a;
+    --success-hover: #73d13d;
+    --warning-color: #faad14;
+    --warning-hover: #ffc53d;
+    --text-dark: #333;
+    --text-light: #f8f9fa;
+    --border-color: #e8e8e8;
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Base Styles */
+  .user-posts-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+  }
+  
+  .posts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .posts-header h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0;
+  }
+  
+  .create-post-btn {
+    background: var(--success-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .create-post-btn:hover {
+    background: var(--success-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow);
+  }
+  
+  /* Posts Grid */
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .post-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  .post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+  
+  .post-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+  }
+  
+  .post-excerpt {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+  
+  .post-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  
+  .action-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    border: none;
+    transition: all 0.2s ease;
+  }
+  
+  .view-btn {
+    background: var(--primary-color) !important;
+    color: white !important;
+  }
+  
+  .view-btn:hover {
+    background: var(--primary-hover) !important;
+  }
+  
+  .edit-btn {
+    background: var(--warning-color);
+    color: white;
+  }
+  
+  .edit-btn:hover {
+    background: var(--warning-hover);
+  }
+  
+  .delete-btn {
+    background: var(--danger-color);
+    color: white;
+  }
+  
+  .delete-btn:hover {
+    background: var(--danger-hover);
+  }
+  
+  /* Empty State */
+  .empty-state {
+    text-align: center;
+    padding: 3rem;
+    background: #fafafa;
+    border-radius: 12px;
+    color: #999;
+  }
+  
+  .empty-state i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #d9d9d9;
+  }
+  
+  .empty-state p {
+    font-size: 1.1rem;
+    margin: 0;
+  }
+  
+  /* Modal Styles */
+  .delete-modal .modal-header {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  
+  .delete-modal .modal-title {
+    font-weight: 600;
+  }
+  
+  .modal-warning {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+  
+  .modal-warning i {
+    font-size: 2rem;
+    color: var(--danger-color);
+  }
+  
+  .modal-warning p {
+    margin: 0;
+    color: var(--text-dark);
+  }
+  
+  .cancel-btn {
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+  }
+  
+  .confirm-delete-btn {
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .posts-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    
+    .posts-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .post-actions {
+      justify-content: flex-end;
+    }
+  }

@@ -1,0 +1,44 @@
+/* profile.css */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+@media (max-width: 767px) {
+    .profile-card {
+        height: auto;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .form-control {
+        font-size: 14px;
+    }
+
+    .btn {
+        font-size: 14px;
+    }
+}
+
+
+.profile-card {
+    margin-top: 100px;
+    width: 100%;
+    max-width: 1000px;
+    background-color: white;
+    border-radius: 25px;
+    position: relative;
+}
+
+.avatar-wrapper {
+    top: -60px;
+}

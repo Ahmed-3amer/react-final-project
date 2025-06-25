@@ -1,0 +1,109 @@
+:root {
+    --primary-dark: #1a1a2e;
+    --primary-light: #f5f5f7;
+    --accent-color: #4cc9f0;
+    --accent-hover: #3a86ff;
+    --text-dark: #333;
+    --text-light: #f8f9fa;
+  }
+  
+  .auth-wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--primary-light);
+    padding: 2rem;
+  }
+  
+  .auth-box {
+    width: 900px;
+    height: 550px;
+    background: #fff;
+    border-radius: 20px;
+    display: flex;
+    overflow: hidden;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .auth-left, 
+  .auth-right {
+    flex: 1;
+    padding: 2.5rem;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+  }
+  
+  .auth-left {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--text-dark);
+  }
+  
+  .auth-right {
+    background: linear-gradient(135deg, var(--primary-dark), #16213e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--text-light);
+  }
+  
+  .toggle-box {
+    text-align: center;
+    z-index: 2;
+  }
+  
+  .toggle-box h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  
+  .toggle-box button {
+    background: transparent;
+    color: var(--text-light);
+    border: 2px solid var(--accent-color);
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .toggle-box button:hover {
+    background: var(--accent-color);
+    color: var(--primary-dark);
+    transform: translateY(-2px);
+  }
+  
+  /* Animation on mode switch */
+  .auth-box.register-mode .auth-left {
+    transform: translateX(100%);
+  }
+  
+  .auth-box.register-mode .auth-right {
+    transform: translateX(-100%);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .auth-box {
+      flex-direction: column;
+      height: auto;
+    }
+    
+    .auth-left, 
+    .auth-right {
+      padding: 2rem 1.5rem;
+    }
+  
+    .auth-box.register-mode .auth-left,
+    .auth-box.register-mode .auth-right {
+      transform: translateX(0) translateY(100%);
+    }
+  }
